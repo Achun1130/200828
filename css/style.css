@@ -162,7 +162,7 @@ a {
 
 .aside .nav-btn {
     display: inline-block;
-    font-size: 30px;
+    font-size: 25px;
     float: right;
     padding: 10px;
 }
@@ -196,7 +196,7 @@ a {
     }
     .header .nav-btn {
         display: block;
-        font-size: 30px;
+        font-size: 25px;
         padding: 10px;
     }
     .sign {
@@ -204,7 +204,7 @@ a {
     }
     .login-btn {
         display: block;
-        font-size: 30px;
+        font-size: 25px;
         padding: 10px;
     }
     .header .nav {
