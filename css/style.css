@@ -191,10 +191,13 @@ a {
 }
 
 @media (max-width:768px) {
+    .header-top {
+        padding: 5px 10px;
+    }
     .header .nav-btn {
         display: block;
         font-size: 40px;
-        padding: 0 5px;
+        padding: 5px;
     }
     .sign {
         display: none;
@@ -202,6 +205,7 @@ a {
     .login-btn {
         display: block;
         font-size: 40px;
+        padding: 5px;
     }
     .header .nav {
         display: none;
