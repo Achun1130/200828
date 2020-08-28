@@ -127,11 +127,11 @@ a {
 
 .nav li a {
     padding: 10px 15px;
-    border-bottom: 5px solid transparent;
+    border-bottom: 2px solid transparent;
 }
 
 .nav li a:hover{
-    border-bottom: 5px solid #fff;
+    border-bottom: 2px solid #fff;
 }
 
 .nav i {
@@ -149,13 +149,7 @@ a {
 }
 
 .aside {
-    position: absolute;
-    top: 0;
-    bottom: 0;  
-    width: 250px;
-    background: rgba(0,0,0,0.75);
-    transform: translateX(-250px);
-    transition: all 1s;
+    display: none;
 }
 
 .main {
@@ -187,6 +181,15 @@ a {
     }
     .header .nav {
         display: none;
+    }
+    .aside {
+        position: absolute;
+        top: 0;
+        bottom: 0;  
+        width: 250px;
+        background: rgba(0,0,0,0.75);
+        transform: translateX(-250px);
+        transition: all 1s;
     }
     .aside .nav-btn {
         display: inline-block;
