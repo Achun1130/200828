@@ -165,13 +165,13 @@ a {
 
 .main {
     transition: all .7s;
-    transform: translateX(0px);
+    position: relative;
 }
 
 .footer {
     padding: 50px 13px;
     transition: all .7s;
-    transform: translateX(0px);
+    position: relative;
 }
 
 .clearfix {
@@ -184,12 +184,12 @@ a {
     }
     .header .nav-btn {
         display: block;
-        font-size: 25px;
+        font-size: 32px;
         padding: 10px;
     }
     .login-btn {
         display: block;
-        font-size: 25px;
+        font-size: 32px;
         padding: 10px;
     }
     .header .nav {
@@ -207,7 +207,7 @@ a {
     }
     .aside .nav-btn {
         display: inline-block;
-        font-size: 25px;
+        font-size: 32px;
         float: right;
         padding: 10px;
     }
@@ -225,9 +225,9 @@ a {
     .active .header {
         transform: translateX(240px);
     }
-    /* .active .header .nav-btn {
+    .active .header .nav-btn {
         visibility: hidden;
-    } */
+    }
     .active .aside {
         transform: translateX(0px);
     }
