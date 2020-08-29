@@ -76,6 +76,10 @@ a {
 .header {
     background: rgba(0,0,0,0.75);
     transition: all .7s;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 10;
 }
 
 .container {
@@ -87,13 +91,13 @@ a {
     display: flex;
 }
 
-.header-top {
+.header .container {
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px;
+    padding: 0 13px;
 }
 
-.header-top h1 a {
+.header h1 a {
     width: 120px;
     height: 24px;
     background: url('../img/logo_w\(null\).svg');
@@ -110,28 +114,33 @@ a {
     display: none;
 }
 
-.sign li a {
-    padding: 10px;
-    background: #fff;
-    color: #000;
-    border-radius: 10px;
-}
-
-.sign li a:hover {
-    opacity: .9;
-}
-
-.sign li:first-child a {
-    margin-right: 10px;
+.header .nav {
+    align-items: center;
 }
 
 .nav li a {
-    padding: 10px 15px;
-    border-bottom: 2px solid transparent;
+    padding: 18px 15px 17px;
+    border-bottom: 1px solid transparent;
 }
 
 .nav li a:hover{
-    border-bottom: 2px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.header .nav li:nth-child(5) a, .header .nav li:nth-child(6) a {
+    padding: 5px 10px;
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    border: none;
+}
+
+.header .nav li:nth-child(5) a:hover,.header .nav li:nth-child(6) a:hover {
+    opacity: .9;
+}
+
+.header .nav li:nth-child(5) a {
+    margin: 0 10px;
 }
 
 .nav i {
@@ -148,38 +157,8 @@ a {
     padding-right: 3px;
 }
 
-
 .aside {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;  
-    width: 250px;
-    background: rgba(0,0,0,0.75);
-    transform: translateX(-250px);
-    transition: all .7s;
-}
-
-.aside .nav-btn {
-    display: inline-block;
-    font-size: 25px;
-    float: right;
-    padding: 10px;
-}
-
-.aside .nav li a {
-    padding: 15px 20px;
-    border-bottom: 1px dashed #fff;
-}
-
-.aside .nav li a:active {
-    background: #fff;
-    color: rgba(0,0,0,0.75);
-}
-
-.aside .nav i {
-    margin-right: 20px;
-    margin-left: 10px;
+    display: none;
 }
 
 .main {
@@ -190,17 +169,15 @@ a {
     clear: both;
 }
 
+/* mobile */
 @media (max-width:768px) {
-    .header-top {
+    .header .container{
         padding: 0;
     }
     .header .nav-btn {
         display: block;
         font-size: 25px;
         padding: 10px;
-    }
-    .sign {
-        display: none;
     }
     .login-btn {
         display: block;
@@ -210,8 +187,38 @@ a {
     .header .nav {
         display: none;
     }
+    .aside {
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;  
+        width: 240px;
+        background: rgba(0,0,0);
+        transform: translateX(-240px);
+        transition: all .7s;
+    }
+    .aside .nav-btn {
+        display: inline-block;
+        font-size: 25px;
+        float: right;
+        padding: 10px;
+    }
+    .aside .nav li a {
+        border-bottom: 1px dashed #fff;
+    }
+    .aside .nav li:first-child a {
+        border-top: 1px solid #fff;
+    }
+    .aside .nav li a:active {
+        background: #fff;
+        color: rgba(0,0,0,0.75);
+    }
+    .aside .nav i {
+        margin-right: 20px;
+        margin-left: 10px;
+    }
     .active .header {
-        transform: translateX(250px);
+        transform: translateX(240px);
     }
     .active .header .nav-btn {
         visibility: hidden;
@@ -220,6 +227,49 @@ a {
         transform: translateX(0px);
     }
     .active .main {
-        transform: translateX(250px);
+        transform: translateX(240px);
+    }
+    .active .footer {
+        transform: translateX(240px);
     }
 }
+/* ===============  header end ================== */
+
+
+.banner {
+    justify-content: center;
+    align-items: center;
+    height: 420px;
+    background: url(../img/header_desktop.png) no-repeat #000 center;
+}
+
+.banner-content {
+    background: rgba(0,0,0,0.35);
+    padding: 20px 42px 26px 22px;
+}
+
+.banner-content h3 {
+    font-size: 36px;
+    line-height: 1.33334;
+    text-align: center;
+}
+
+.banner-content p {
+    line-height: 1.33334;
+    margin-top: 1em;
+    text-align: center;
+}
+
+.banner-content p span {
+    margin: 0 10px;
+}
+
+@media (max-width:767px) {
+    .banner {
+        background-image: url(../img/header_mobile.png);
+    }
+    .banner-content span:first-child {
+        display: block;
+    }
+}
+/* ================ banner end =================== */
