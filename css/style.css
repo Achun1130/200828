@@ -56,16 +56,14 @@ img {
 /* =============== CSS Reset End ================= */
 
 
-/* ================= layout ======================= */
+/* =============== layout start ================== */
 body {
     font-family: 'Microsoft JhengHei Regular';
-    color: #fff;
 }
 
 a {
     display: block;
     text-decoration: none;
-    color: #fff;
 }
 
 .wrap {
@@ -80,6 +78,10 @@ a {
     left: 0;
     right: 0;
     z-index: 10;
+}
+
+.header, .header a, .banner, .aside, .aside a {
+    color: #fff;
 }
 
 .container {
@@ -163,10 +165,13 @@ a {
 
 .main {
     transition: all .7s;
+    transform: translateX(0px);
 }
 
 .footer {
+    padding: 50px 13px;
     transition: all .7s;
+    transform: translateX(0px);
 }
 
 .clearfix {
@@ -220,9 +225,9 @@ a {
     .active .header {
         transform: translateX(240px);
     }
-    .active .header .nav-btn {
+    /* .active .header .nav-btn {
         visibility: hidden;
-    }
+    } */
     .active .aside {
         transform: translateX(0px);
     }
@@ -234,7 +239,6 @@ a {
     }
 }
 /* ===============  header end ================== */
-
 
 .banner {
     justify-content: center;
@@ -248,14 +252,16 @@ a {
     padding: 20px 42px 26px 22px;
 }
 
+.banner-content h3, .banner-content p, .footer-item h4, .feature-content h4 {
+    line-height: 1.33334;
+}
+
 .banner-content h3 {
     font-size: 36px;
-    line-height: 1.33334;
     text-align: center;
 }
 
 .banner-content p {
-    line-height: 1.33334;
     margin-top: 1em;
     text-align: center;
 }
@@ -273,9 +279,7 @@ a {
     }
 }
 /* ================ banner end =================== */
-
-.footer {
-    padding: 50px 13px;
+.footer, .feature {
     background: #efe9e7;
     color: #3D1101;;
 }
@@ -290,11 +294,14 @@ a {
 
 .footer-item h4 {
     font-size: 24px;
-    line-height: 1.33334;
 }
 
 .footer-item p {
     margin-top: 1em;
+}
+
+.footer-item p, .footer-info li, .feature-item p, .chef-content span, .chef-content p {
+    font-size: 16px;
     line-height: 1.3125;
 }
 
@@ -302,10 +309,6 @@ a {
     margin-top: 1em;
     list-style: disc;
     list-style-position: inside;
-}
-
-.footer-info li {
-    line-height: 1.3125;
 }
 
 .footer-info li a {
@@ -353,7 +356,7 @@ a {
     opacity: 0.7;
 }
 
-@media (max-width:767px) {
+@media (max-width:768px) {
     .footer-item:first-child {
         display: none;
     }
@@ -376,5 +379,130 @@ a {
     .footer-item:last-child {
         margin-top: 1em;
         align-items: flex-start;
+    }
+}
+/* ============== footer end ================== */
+/* ============== layouy end ================== */
+
+/* ============= index-feature start ========= */
+.feature .container{
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 13px;
+}
+
+.feature h3 {
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.feature h3::before {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #979797;
+    position: absolute;
+    top: calc(50% - 0.5px);
+    left: -140px;
+}
+
+.feature h3::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #979797;;
+    position: absolute;
+    top: calc(50% - 0.5px);
+    right: -140px;
+}
+
+.feature-content {
+    justify-content: space-between;
+}
+
+.feature-item {
+    width: 31.33333%;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.feature-item img {
+    border-radius: 50%;
+}
+
+.feature-content h4 {
+    font-size: 18px;
+    margin: 20px 0 11px;
+}
+
+@media (max-width:768px) {
+    .feature-item {
+        width: 45%;
+    }
+    .feature-item:nth-child(2) {
+        display: none;
+    }
+    .feature-content {
+        justify-content: center;
+    }
+}
+
+@media (max-width:414px) {
+    .feature h3::before, .feature h3:after {
+        display: none;
+    }
+    .feature-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature-item {
+        width: 95%;
+    }
+    .feature-item:nth-child(2) {
+        display: flex;
+    }
+}
+
+
+/* ============= index-chef start ========= */
+.chef {
+    background: #3D1101;
+    color:#EFE9E7;
+}
+
+.chef .container {
+    padding: 0 13px;
+    align-items: center;
+}
+
+.chef-img, .chef-content {
+    width: 50%;
+}
+
+.chef-img img {
+    height: 460px;
+}
+
+.chef-content {
+    padding: 80px 25px;
+}
+
+.chef-content h3 {
+    font-size: 20px;
+    line-height: 32px;
+}
+
+@media (max-width:414px) {
+    .chef .container {
+        flex-direction: column;
+    }
+    .chef-img, .chef-content {
+        width: 100%;
     }
 }

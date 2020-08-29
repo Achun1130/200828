@@ -3,4 +3,7 @@ $(document).ready(function () {
         event.preventDefault();
         $('body').toggleClass('active');
     });
+    $('.nav li a').on('click', function (event) {
+        $('body').removeClass('active');
+    });
 });
