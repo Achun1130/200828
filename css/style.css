@@ -93,10 +93,13 @@ a {
     display: flex;
 }
 
+.header .container, .chef .container, .thought-content {
+    padding: 0 13px;
+}
+
 .header .container {
     justify-content: space-between;
     align-items: center;
-    padding: 0 13px;
 }
 
 .header h1 a {
@@ -168,8 +171,11 @@ a {
 }
 
 .footer {
-    padding: 50px 13px;
     transition: all .7s;
+}
+
+.footer .container, .feature .container, .thought .container {
+    padding: 50px 13px;
 }
 
 .clearfix {
@@ -250,7 +256,7 @@ a {
     padding: 20px 42px 26px 22px;
 }
 
-.banner-content h3, .banner-content p, .footer-item h4, .feature-content h4 {
+.banner-content h3, .banner-content p, .footer-item h4, .feature-content h4 , .thought h3, .thought-content h5 {
     line-height: 1.33334;
 }
 
@@ -277,7 +283,7 @@ a {
     }
 }
 /* ================ banner end =================== */
-.footer, .feature {
+.footer, .feature , .thought{
     background: #efe9e7;
     color: #3D1101;;
 }
@@ -290,7 +296,7 @@ a {
     width: 31.33333%;
 }
 
-.footer-item h4 {
+.footer-item h4, .thought h3 {
     font-size: 24px;
 }
 
@@ -386,7 +392,6 @@ a {
 .feature .container{
     flex-direction: column;
     align-items: center;
-    padding: 50px 13px;
 }
 
 .feature h3 {
@@ -446,9 +451,6 @@ a {
     .feature-item:nth-child(2) {
         display: none;
     }
-    .feature-content {
-        justify-content: center;
-    }
 }
 
 @media (max-width:414px) {
@@ -472,10 +474,10 @@ a {
 .chef {
     background: #3D1101;
     color:#EFE9E7;
+    position: relative;
 }
 
 .chef .container {
-    padding: 0 13px;
     align-items: center;
 }
 
@@ -502,5 +504,63 @@ a {
     }
     .chef-img, .chef-content {
         width: 100%;
+    }
+}
+
+
+/* ============= index-thought start ========= */
+.thought h3 {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.thought ul {
+    justify-content: space-between;
+}
+
+.thought-item {
+    align-items: flex-start;
+    width: 31.33333%;
+}
+
+.thought-item img {
+    border-radius: 50%;
+}
+
+.thought-content h5 {
+    font-size: 18px;
+    margin: 19px 0 22px;
+}
+
+.thought-content p {
+    line-height: 24px;
+    margin-bottom: 1em;
+}
+
+.thought-content p:last-child {
+    text-align: right;
+    margin-bottom: 0;
+}
+
+@media (max-width:768px) {
+    .thought-item:nth-child(2) {
+        display: none;
+    }
+    .thought-item {
+        width: 45%;
+    }
+}
+
+@media (max-width:414px) {
+    .thought ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .thought-item:nth-child(2) {
+        display: flex;
+        margin: 30px 0;
+    }
+    .thought-item {
+        width: 95%;
     }
 }
