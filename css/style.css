@@ -558,6 +558,7 @@ a {
         background: rgba(0,0,0);
         transform: translateX(-240px);
         transition: all .7s;
+        overflow: auto;
     }
     .aside .nav-btn {
         display: inline-block;
