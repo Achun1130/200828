@@ -1042,11 +1042,10 @@ a {
 
 .booking input {
     width: 100%;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .booking label, .booking p {
-    font-family: PingFangTC-Light;
     font-size: 14px;
     color: #3D1101;
     margin: 0.375em 0;
@@ -1067,7 +1066,6 @@ a {
 
 .booking a, .booking button {
     width: 70px;
-    font-family: PingFangTC-Regular;
     font-size: 14px;
     line-height: 20px;
     padding: 6px 0;
@@ -1258,10 +1256,16 @@ a {
 
 /* 價格 */
 .cart-item p:nth-child(4) {
-    font-family: Roboto-Light;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-style: italic;
     font-size: 20px;
     line-height: 24px;
-    font-weight: bold;
+}
+
+.cart-item span {
+    font-weight: 300;
+    font-style: normal;
 }
 
 /* 加入購物車 & 已加入購物車 */
@@ -1324,13 +1328,13 @@ a.cart-favo {
 }
 
 /* 熱銷美食 */
-.cart-item span {
+.cart-item p:last-child {
     position: absolute;
     top: 0px;
     right: -13px;
     transform: rotate(-315deg);
     transform-origin: left center;
-    font-family: NotoSansCJKtc-Bold;
+    font-family: 'Noto Sans TC', sans-serif;
     font-size: 14px;
     color: #FFFFFF;
     z-index: 2;
@@ -1560,7 +1564,6 @@ a.cart-favo {
 
 .login a[href$="html"], .login button, .register button {
     width: 125px;
-    font-family: PingFangTC-Regular;
     font-size: 14px;
     line-height: 20px;
     padding: 6px 0;
@@ -1592,7 +1595,7 @@ a.cart-favo {
 }
 
 .register form p {
-    font-family: 'Microsoft JhengHei';
+    font-family: 'Microsoft JhengHei Regular';
     font-size: 18px;
     line-height: 20px;
     text-align: left;
