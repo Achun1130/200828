@@ -1154,31 +1154,35 @@ a {
     padding: 0 1.5%;
 }
 
-.cart-top a:hover {
-    opacity: .8;
-}
-
 .cart-top form {
     width: 60%;
     position: relative;
 }
 
-.cart-top input {
+.cart-top input[type="search"] {
     border: 2px solid #3D1101;
-    background: #efe9e7;
     width: 100%;
-    font-size: 18px;
-    padding: 3.5px;
+    font-size: 14px;
+    padding: 6px 38px 6px 6px;
 }
 
-.cart-top form a {
+.cart-top button {
     font-size: 19px;
-    padding: 6.25px 8.5px;
+    width: 36px;
+    height: 28px;
+    line-height: 28px;
     color: #fff;
     background: #3D1101;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 2px;
+    right: 2px;
+    border-radius: 0 1.5px 1.5px 0;
+    text-align: center;
+    padding: 0;
+}
+
+.cart-top button:hover, .cart-top a:hover {
+    opacity: .8;
 }
 
 .cart-checkout {
@@ -1489,7 +1493,7 @@ a.cart-favo {
 
 /* ================== login start ================ */
 .login, .register {
-    padding: 50px 0;
+    padding: 50px 0 4px;
 }
 
 .login h3, .register h3 {
@@ -1548,6 +1552,7 @@ a.cart-favo {
     font-size: 12px;
     left: 9px;
     top: calc(50% - 6px);
+    color: rgba(61,17,0,0.50);
 }
 
 .login .password i, .register .password i {
@@ -1555,6 +1560,7 @@ a.cart-favo {
     font-size: 14px;
     left: 9px;
     top: calc(50% - 7px);
+    color: rgba(61,17,0,0.50);
 }
 
 /* 忘記密碼 & 已有帳號 */
