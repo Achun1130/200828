@@ -641,6 +641,9 @@ a {
     .banner {
         background-image: url(../img/header_mobile.png);
     }
+    .banner-content {
+        padding: 20px 6px;
+    }
     .banner-content span:first-child {
         display: block;
     }
@@ -1295,22 +1298,73 @@ a.cart-favo {
     transform: rotate(-315deg);
 }
 
+.favo-remind {
+    position: fixed;
+    background: rgb(82, 78, 78);
+    color: #fff;
+    top: calc(50% - 42px + 26.5px);
+    left: calc(50% - 55px);
+    z-index: 10;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.favo-remind::before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.5);
+    z-index: -1;
+}
+
+.favo-remind span {
+    display: block;
+}
+
+.favo-remind i {
+    font-size: 36px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.favo-remind span:last-child {
+    display: none;
+}
+
+.favo-remind.active span:nth-child(2) {
+    display: none;
+}
+
+.favo-remind.active span:last-child {
+    display: block;
+}
+
 
 @media (max-width:768px) {
-    .cart-menu {
-        display: none;
-    }
     .cart-content {
         margin-left: 0;
     }
     .cart-item li {
-        width: 45%;
-        margin-left: 2.5%;
-        margin-right: 2.5%;
+        width: 47%;
     }
 }
 
 @media (max-width:414px) {
+    .cart .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cart-menu {
+        width: 90%;
+        margin-bottom: 23px;
+    }
     .cart-top {
         flex-direction: column;
         align-items: flex-end;
@@ -1319,7 +1373,10 @@ a.cart-favo {
         width: 100%;
         margin-bottom: 20px;
     }
+    .cart-item {
+        justify-content: center;
+    }
     .cart-item li {
-        width: 95%;
+        width: 90%;
     }
 }

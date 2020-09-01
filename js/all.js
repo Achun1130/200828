@@ -28,6 +28,15 @@ $(document).ready(function () {
     // cart-item 購物車
     $('.cart-item li a').on('click', function (event) {
         event.preventDefault();
-        $(this).parent().toggleClass('active');   
+        $(this).parent().toggleClass('active');
+        // 購物車提醒
+        $('.favo-remind').fadeIn().delay(400).fadeOut();
+        if ($(this).parent().hasClass('active')) {
+            // 加入購物車
+            $('.favo-remind').removeClass('active');
+        } else {
+            // 移除購物車
+            $('.favo-remind').addClass('active');
+        }
     });
 });
