@@ -39,4 +39,21 @@ $(document).ready(function () {
             $('.favo-remind').addClass('active');
         }
     });
+
+    // top
+    $('.top').on('click', function (event) {
+        event.preventDefault();
+        $('body,html').animate({
+            scrollTop: $('.cart').offset().top-53
+        },1000);
+    });
+
+    $(window).scroll(function(){
+        // 過 banner後出現
+        if($(window).scrollTop() > 367){
+        $(".top").show();
+        } else {
+            $('.top').hide();
+        }
+   })
 });
