@@ -40,7 +40,7 @@ $(document).ready(function () {
         }
     });
 
-    // top
+    // top 至頂
     $('.top').on('click', function (event) {
         event.preventDefault();
         $('body,html').animate({
@@ -48,8 +48,9 @@ $(document).ready(function () {
         },1000);
     });
 
+    
     $(window).scroll(function(){
-        // 過 banner後出現
+        // 過 banner後出現\
         if($(window).scrollTop() > 367){
         $(".top").show();
         } else {

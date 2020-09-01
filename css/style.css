@@ -217,16 +217,18 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 }
 .pure-form fieldset {
     margin: 0;
-    padding: 0.35em 0 0.75em;
+    /* padding不用 */
+    /* padding: 0.35em 0 0.75em; */
     border: 0;
 }
 .pure-form legend {
     display: block;
     width: 100%;
-    padding: 0.3em 0;
-    margin-bottom: 0.3em;
-    color: #333;
-    border-bottom: 1px solid #e5e5e5;
+    /* padding / magin / border 不用 */
+    /* padding: 0.3em 0; */
+    /* margin-bottom: 0.3em; */
+    /* color: #333; */
+    /* border-bottom: 1px solid #e5e5e5; */
 }
 
 .pure-form-stacked input[type="text"],
@@ -368,6 +370,77 @@ since IE8 won't execute CSS that contains a CSS3 selector.
     font-size: 0.875em;
 }
 /* ================= pure forms end =============== */
+
+/*csslint outline-none:false*/
+
+.pure-button {
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0.5em 1em;
+    color: rgba(0, 0, 0, 0.80);
+    border: none rgba(0, 0, 0, 0);
+    background-color: #E6E6E6;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.pure-button-hover,
+.pure-button:hover,
+.pure-button:focus {
+    background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+}
+.pure-button:focus {
+    outline: 0;
+}
+.pure-button-active,
+.pure-button:active {
+    box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
+    border-color: #000;
+}
+
+.pure-button[disabled],
+.pure-button-disabled,
+.pure-button-disabled:hover,
+.pure-button-disabled:focus,
+.pure-button-disabled:active {
+    border: none;
+    background-image: none;
+    opacity: 0.40;
+    cursor: not-allowed;
+    box-shadow: none;
+    pointer-events: none;
+}
+
+.pure-button-hidden {
+    display: none;
+}
+
+.pure-button-primary,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected {
+    background-color: rgb(0, 120, 231);
+    color: #fff;
+}
+
+/* Button Groups */
+.pure-button-group .pure-button {
+    margin: 0;
+    border-radius: 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+
+}
+
+.pure-button-group .pure-button:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+.pure-button-group .pure-button:last-child {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-right: none;
+}
+/* ================= pure buttons end ============ */
 
 /* =============== layout start ================== */
 body {
@@ -649,7 +722,7 @@ a {
     }
 }
 /* ================ banner end =================== */
-.footer, .feature, .thought, .cart {
+.footer, .feature, .thought, .cart, .login, .register {
     background: #efe9e7;
     color: #3D1101;;
 }
@@ -670,7 +743,7 @@ a {
     margin-top: 1em;
 }
 
-.footer-item p, .footer-info li, .feature-item p, .chef-content span, .chef-content p, .cart-checkout a, .cart-item a:nth-child(5), .cart-item a:nth-child(6) {
+.footer-item p, .footer-info li, .feature-item p, .chef-content span, .chef-content p, .cart-checkout a, .cart-item a:nth-child(5), .cart-item a:nth-child(6), .login label, .register label {
     font-size: 16px;
     line-height: 1.3125;
 }
@@ -992,27 +1065,22 @@ a {
     justify-content: flex-end;
 }
 
-.booking input[type="button"], .booking input[type="submit"] {
+.booking a, .booking button {
     width: 70px;
     font-family: PingFangTC-Regular;
     font-size: 14px;
-    color: #FFFFFF;
-    border: 0;
-    padding: 7.5px 0;
-    cursor: pointer;
+    line-height: 20px;
+    padding: 6px 0;
+    text-align: center;
 }
 
-.booking input[type="button"]:hover, .booking input[type="submit"]:hover {
-    background-image: linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
-} 
-
-.booking input[type="button"] {
+.booking a {
     background-color: rgba(0,0,0,0.35);
     border-radius: 3px;
     margin-right: 11px;
 }
 
-.booking input[type="submit"] {
+.booking button {
     background-color: #F56C23;
     border-radius: 3px;
 }
@@ -1398,5 +1466,152 @@ a.cart-favo {
     .top {
         left: 80%;
         bottom: 50px;
+    }
+}
+
+
+
+/* ================== login start ================ */
+.login, .register {
+    padding: 50px 0;
+}
+
+.login h3, .register h3 {
+    font-size: 48px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: bold;
+}
+
+.login p, .register p {
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Noto Sans TC', sans-serif;
+    margin-bottom: 35px;
+    font-weight: 500;
+}
+
+.login form, .register form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 15px;
+    box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+    border-top: 3px solid#FF5E45 ;
+}
+
+.login legend, .register legend {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.login label, .register label {
+    margin: 3px 0;
+}
+
+.login input[type=email], .login input[type=password], .register input[type=email], .register input[type=password] {
+    margin: 0;
+    width: 100%;
+    padding-left: 30px;
+    font-size: 14px;
+}
+
+.login .email, .register .email, .register-item div:nth-child(4) {
+    margin-bottom: 12px;
+}
+
+.login .email, .login .password, .register .email, .register .password {
+    position: relative;
+}
+
+.login .email i, .register .email i {
+    position: absolute;
+    font-size: 12px;
+    left: 9px;
+    top: calc(50% - 6px);
+}
+
+.login .password i, .register .password i {
+    position: absolute;
+    font-size: 14px;
+    left: 9px;
+    top: calc(50% - 7px);
+}
+
+/* 忘記密碼 & 已有帳號 */
+.login a[href="#"], .register a[href$="html"] {
+    font-size: 14px;
+    color: #FF5E45;
+    line-height: 19px;
+    margin: 1px 0 30px 0;
+    display: inline-block;
+}
+
+.login a[href="#"]:hover, .register a[href$="html"]:hover {
+    text-decoration: underline;
+}
+
+.login .btn {
+    justify-content: space-between;
+}
+
+.login a[href$="html"], .login button, .register button {
+    width: 125px;
+    font-family: PingFangTC-Regular;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 6px 0;
+    text-align: center;
+}
+
+.login a[href$="html"] {
+    background-color: rgba(0,0,0,0.35);
+    border-radius: 3px;
+}
+
+.login button, .register button {
+    background-color: #F56C23;
+    border-radius: 3px;
+}
+
+
+/* ================== register start ============== */
+.register form {
+    max-width: 620px;
+}
+
+.register-content {
+    justify-content: space-between;
+}
+
+.register form p, .register-item {
+    width: 48%;
+}
+
+.register form p {
+    font-family: 'Microsoft JhengHei';
+    font-size: 18px;
+    line-height: 20px;
+    text-align: left;
+}
+
+.register a[href$="html"] {
+    float: left;
+}
+
+.register button {
+    float: right;
+}
+
+@media (max-width:414px) {
+    .register-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .register form p, .register-item {
+        width: 95%;
     }
 }
